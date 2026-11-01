@@ -131,6 +131,9 @@ type BarRectangleType = {
   height: number;
 };
 
+/**
+ * @public
+ */
 export interface BarRectangleItem extends RectangleProps {
   value: number | [number, number];
   /** the coordinate of background rectangle */
@@ -154,6 +157,9 @@ export interface BarRectangleItem extends RectangleProps {
   originalDataIndex: number;
 }
 
+/**
+ * @public
+ */
 export type BarShapeProps = BarRectangleItem &
   ShapeAnimationProps & {
     isActive: boolean;
@@ -537,6 +543,9 @@ type BarSvgProps = Omit<
   'radius' | 'name' | 'ref'
 >;
 
+/**
+ * @public
+ */
 export type Props<DataPointType = any, ValueAxisType = any> = Partial<BarEvents> &
   BarProps<DataPointType, ValueAxisType> &
   Omit<BarSvgProps, keyof BarEvents | 'fill'>;
@@ -1544,6 +1553,7 @@ function BarFn(propsWithFillObject: Props) {
  * @provides CellReader
  * @consumes CartesianChartContext
  * @consumes BarStackContext
+ * @public
  */
 export const Bar = React.memo(BarFn, propsAreEqual) as <DataPointType = any, ValueAxisType = any>(
   props: Props<DataPointType, ValueAxisType>,

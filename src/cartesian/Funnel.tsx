@@ -76,6 +76,9 @@ import {
   useIndexedLabelThemeResolver,
 } from '../theme/labelTheme';
 
+/**
+ * @public
+ */
 export type FunnelTrapezoidItem = TrapezoidProps &
   TrapezoidViewBox & {
     value?: number | string;
@@ -293,6 +296,9 @@ type StringFillProps = Omit<Props, 'fill'> & { fill?: string };
 
 type InternalProps = FunnelSvgProps & InternalFunnelProps;
 
+/**
+ * @public
+ */
 export type Props<DataPointType = any, DataValueType = any> = FunnelSvgProps &
   FunnelProps<DataPointType, DataValueType>;
 
@@ -1012,6 +1018,9 @@ function FunnelFn(propsWithFillObject: Props) {
   );
 }
 
+/**
+ * @public
+ */
 export const Funnel = FunnelFn as {
   <DataPointType = any, DataValueType = any>(outsideProps: Props<DataPointType, DataValueType>): ReactElement;
   (outsideProps: Props<any, any>): ReactElement;
